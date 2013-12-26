@@ -13,6 +13,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+
         <!-- the monitor aka main activitiy -->
         <activity
             android:name="org.unividuell.android.mediacontrol.MonitorActivity"
@@ -23,29 +24,31 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
+
         <!-- handler for long press events -->
         <!-- i'm involved @ http://stackoverflow.com/a/20776215/810944 -->
-		<activity android:name="org.unividuell.android.mediacontrol.LongPressActivity">
-		    <intent-filter>
-		        <action android:name="android.intent.action.VOICE_COMMAND"/>
-		        <category android:name="android.intent.category.DEFAULT"/>
-		    </intent-filter>
-<!-- 		    <intent-filter> -->
-<!-- 		        <action android:name="android.intent.action.WEB_SEARCH"/> -->
-<!-- 		        <category android:name="android.intent.category.DEFAULT"/> -->
-<!-- 		    </intent-filter> -->
-		    <intent-filter>
-		        <action android:name="android.speech.action.WEB_SEARCH"/>
-		        <category android:name="android.intent.category.DEFAULT"/>
-		    </intent-filter>
-		</activity>
-        <receiver android:name="org.unividuell.android.mediacontrol.RemoteControlReceiver">
-		    <intent-filter>
-		        <action android:name="android.intent.action.MEDIA_BUTTON" />
-		    </intent-filter>
-		</receiver>
-		
+        <activity android:name="org.unividuell.android.mediacontrol.LongPressActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.VOICE_COMMAND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.WEB_SEARCH"/> -->
+            <!-- <category android:name="android.intent.category.DEFAULT"/> -->
+            <!-- </intent-filter> -->
+            <intent-filter>
+                <action android:name="android.speech.action.WEB_SEARCH" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name="org.unividuell.android.mediacontrol.RemoteControlReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
